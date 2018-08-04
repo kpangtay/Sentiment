@@ -9,7 +9,8 @@ module.exports = router
 passport.use(new InstagramStrategy({
    clientID: process.env.INSTAGRAM_CLIENT_ID,
    clientSecret: process.env.INSTAGRAM_CLIENT_SECRET,
-   callbackURL:"http://localhost:8080/auth/instagram/callback"
+   callbackURL: process.env.INSTAGRAM_CALLBACK
+   //"http://localhost:8080/auth/instagram/callback"
  },
  function(accessToken, refreshToken, profile, done) {
    // User.findOrCreate({ where: { instagramId: profile.id }}, function (err, user) {
